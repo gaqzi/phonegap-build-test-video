@@ -7,15 +7,14 @@
   <script type="text/javascript" src="phonegap.js"></script>
   <script>
     function record() {
+        var options = { duration: 6 };
         navigator.device.capture.captureVideo(function() {
             alert('successful video capture!');
             console.log(arguments);
         }, function() {
             alert('unsuccessful video capture');
             console.log(arguments);
-        }, {
-            duration: 6
-        });
+        }, options);
     }
   </script>
 
