@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>PhoneGap Video Recorder</title>
+</head>
+<body>
+  <script type="text/javascript" src="phonegap.js"></script>
+  <script>
+    function record() {
+        navigator.device.capture.captureVideo(function() {
+            alert('successful video capture!');
+            console.log(arguments);
+        }, function() {
+            alert('unsuccessful video capture');
+            console.log(arguments);
+        }, {
+            duration: 6
+        });
+    }
+  </script>
+
+  <h2 onclick="record();">Record 6s video</h2>
+</body>
+</html>
